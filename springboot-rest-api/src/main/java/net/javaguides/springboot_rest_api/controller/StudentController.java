@@ -71,4 +71,13 @@ public class StudentController {
         return  student;
 
     }
+
+    // spring boot REST API that Handle HTTP PUT request
+    @PutMapping("students/{id}/update")
+    public Student updateStudent(@RequestBody Student student,@PathVariable int id){
+
+        System.out.println(student.getFirstName());
+        System.out.println(student.getLastName());
+        return  student;
+    }
 }
