@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("students")
 public class StudentController {
 
     // http://localhost:8080/student
@@ -29,7 +30,7 @@ public class StudentController {
 
 
     //http://localhost:8080/students
-@GetMapping("students")
+@GetMapping("")
     public ResponseEntity<List<Student>>  getstudents(){
 
         List<Student> students=new ArrayList<>();
@@ -44,7 +45,7 @@ public class StudentController {
     // spring boot REST API that with path variable
 
     //http://localhost:8080/students/1/jyfh/try
-    @GetMapping("students/{id}/{first-name}/{last-name}")
+    @GetMapping("/{id}/{first-name}/{last-name}")
     public ResponseEntity<Student> studentPathVariable(@PathVariable("id") int studentId,
                                        @PathVariable("first-name") String firstNmae,
                                        @PathVariable("last-name") String lastname){
@@ -55,7 +56,7 @@ public class StudentController {
     // create spring boot REST API that with Request variable , it extract the value from query paramter,  path varivale use value from url
 
     //http://localhost:8080/students/query?id=1&firstName=pradeep&lastName=HV
-    @GetMapping("students/query")
+    @GetMapping("query")
     public ResponseEntity<Student> studentRequestVariable(@RequestParam int id,
                                           String firstName,
                                           String lastName){
@@ -68,7 +69,7 @@ public class StudentController {
 
     // http://localhost:8080/students/create
 
-    @PostMapping("students/create")
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Student> createStudent(@RequestBody Student student){
 
@@ -81,7 +82,7 @@ public class StudentController {
     }
 
     // spring boot REST API that Handle HTTP PUT request
-    @PutMapping("students/{id}/update")
+    @PutMapping("{id}/update")
     public ResponseEntity<Student> updateStudent(@RequestBody Student student,@PathVariable int id){
 
         System.out.println(student.getFirstName());
@@ -92,7 +93,7 @@ public class StudentController {
 
     // spring boot REST API that Handle HTTP DELETE request
 
-    @DeleteMapping("students/{id}/delete")
+    @DeleteMapping("{id}/delete")
     public ResponseEntity<String> deleteStudent(@PathVariable int id){
         System.out.println(id);
 //        return  "deleteed successfullly";
