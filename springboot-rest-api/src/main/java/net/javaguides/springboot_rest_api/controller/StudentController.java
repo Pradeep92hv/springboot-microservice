@@ -80,4 +80,13 @@ public class StudentController {
         System.out.println(student.getLastName());
         return  student;
     }
+
+
+    // spring boot REST API that Handle HTTP DELETE request
+
+    @DeleteMapping("students/{id}/delete")
+    public String deleteStudent(@PathVariable int id){
+        System.out.println(id);
+        return  "deleteed successfullly";
+    }
 }
