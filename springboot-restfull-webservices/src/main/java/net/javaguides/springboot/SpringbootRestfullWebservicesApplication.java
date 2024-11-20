@@ -19,3 +19,14 @@ public class SpringbootRestfullWebservicesApplication {
 	}
 
 }
+
+
+/*
+The /info Endpoint
+If you added any information about the application in
+application.properties then we can view it using /info
+endpoint
+http://localhost:8080/actuator/info
+
+
+ */
