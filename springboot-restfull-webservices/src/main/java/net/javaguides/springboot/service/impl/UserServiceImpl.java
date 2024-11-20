@@ -6,6 +6,7 @@ import net.javaguides.springboot.entity.User;
 import net.javaguides.springboot.mapper.UserMapper;
 import net.javaguides.springboot.repository.UserRepository;
 import net.javaguides.springboot.service.UserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,17 +19,22 @@ public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
 
+    private ModelMapper modelMapper;
+
     @Override
     public UserDto createUser(UserDto userDto) {
 
         // convert UserDto to User JPA Entity to save in DB
 
-        User user= UserMapper.mapToUser(userDto);
+//        User user= UserMapper.mapToUser(userDto);
+
+        User user= modelMapper.map(userDto,User.class);
          User savedUser= userRepository.save(user);
 
          // convert User JPA Entity to UserDto
 
-        UserDto savedUserDto=UserMapper.mapToUserDto(user);
+//        UserDto savedUserDto=UserMapper.mapToUserDto(user);
+        UserDto savedUserDto=modelMapper.map(savedUser,UserDto.class);
 
         return savedUserDto;
 
@@ -40,13 +46,17 @@ public class UserServiceImpl implements UserService {
      Optional<User>  optionalUser=userRepository.findById(userID);
      User user = optionalUser.get();
 
-     return UserMapper.mapToUserDto(user);
+//     return UserMapper.mapToUserDto(user);
+     return modelMapper.map(user,UserDto.class);
     }
 
     @Override
     public List<UserDto> getAllUser() {
         List<User> users =userRepository.findAll();
-        return users.stream().map(UserMapper :: mapToUserDto)
+//        return users.stream().map(UserMapper :: mapToUserDto)
+//                .collect(Collectors.toList());
+
+        return users.stream().map((user) -> modelMapper.map(user,UserDto.class))
                 .collect(Collectors.toList());
     }
 
@@ -59,7 +69,8 @@ public class UserServiceImpl implements UserService {
         existingUser.setEmail(user.getEmail());
 
         User updatedUser= userRepository.save(existingUser);
-        return UserMapper.mapToUserDto(updatedUser);
+//        return UserMapper.mapToUserDto(updatedUser);
+        return modelMapper.map(updatedUser,UserDto.class);
     }
 
     @Override
