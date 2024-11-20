@@ -22,11 +22,16 @@ public class SpringbootRestfullWebservicesApplication {
 
 
 /*
-The /info Endpoint
+1) The /info Endpoint
 If you added any information about the application in
 application.properties then we can view it using /info
 endpoint
 http://localhost:8080/actuator/info
 
 
+2) The /health Endpoint
+The /health endpoint shows the health of the
+application, including the disk space, databases and
+more
+http://localhost:8080/actuator/health
  */
