@@ -16,13 +16,13 @@ public class UserDto {
     // sensitivate information should not included
     Long id;
 
-    @NotEmpty   // java bean validation
+    @NotEmpty(message = "User First name should not be empty")   // java bean validation
     String firstName;
 
-    @NotEmpty
+    @NotEmpty(message = "User Last name should not be empty")
     String lastName;
 
-    @NotEmpty
+    @NotEmpty(message = "User Mail should not be empty")
     @Email
     String email;
 }
