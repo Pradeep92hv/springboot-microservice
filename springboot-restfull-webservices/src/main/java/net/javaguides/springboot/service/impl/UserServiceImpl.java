@@ -6,6 +6,7 @@ import net.javaguides.springboot.repository.UserRepository;
 import net.javaguides.springboot.service.UserService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,5 +25,10 @@ public class UserServiceImpl implements UserService {
     public User getUserById(Long userID) {
      Optional<User>  optionalUser=userRepository.findById(userID);
      return  optionalUser.get();
+    }
+
+    @Override
+    public List<User> getAllUser() {
+        return userRepository.findAll();
     }
 }
