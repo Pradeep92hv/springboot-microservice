@@ -41,5 +41,11 @@ your application, including the beans you explicitly
 congured and those auto congured by Spring Boot
 http://localhost:8080/actuator/beans
 
+4)  The /conditions Endpoint
+The /conditions endpoint shows the auto
+conguration report, categorised into pasitiveMatches
+and negativeMatche
+http://localhost:8080/actuator/conditions
+
 
  */
