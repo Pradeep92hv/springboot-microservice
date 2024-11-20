@@ -103,3 +103,5 @@ request to below endpoint
 http://localhost:8080/actuator/shutdown
 
  */
+
+//  localhost:8080/swagger-ui/index.html   -> swagger url
