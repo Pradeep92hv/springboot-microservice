@@ -47,5 +47,39 @@ conguration report, categorised into pasitiveMatches
 and negativeMatche
 http://localhost:8080/actuator/conditions
 
+5)  The /mappings Endpoint
+The /mappings endpoint shows all the
+@RequestMapping paths declared in the application
+ This is very helpful for checking which request path
+will be handled by which controller method
+http://localhost:8080/actuator/mappings
+
+6)  The /configprops Endpoint
+The /congprops endpoint offers all the conguration
+properties defined by @CongurationProperties bean,
+including your conguration properties defined in the
+application.properties or YAML les
+http://localhost:8080/actuator/congprops
+
+7) The /metrics Endpoint
+The /metrics endpoint shows various metrics about
+the current application such as how much memory it
+is using, how much memory is free, the size of the
+heap used, the number of threads used, and so on
+http://localhost:8080/actuator/metrics
+
+8) The /env Endpoint
+The /env endpoint exposes all the properties from the
+Spring’s CongurableEnvironment interface, such as
+a list of active proles, application properties, system
+environment variables and so on
+http://localhost:8080/actuator/env
+
+9) The /threaddump Endpoint
+Using /threaddumb endpoint, you can view your
+application’s thread dumb with running threads
+details and JVM stack trace
+http://localhost:8080/actuator/threaddump
+
 
  */
