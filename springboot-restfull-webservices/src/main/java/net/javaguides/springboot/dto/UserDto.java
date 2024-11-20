@@ -1,5 +1,7 @@
 package net.javaguides.springboot.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,8 +15,15 @@ public class UserDto {
 
     // sensitivate information should not included
     Long id;
+
+    @NotEmpty    // java bean validation
     String firstName;
+
+    @NotEmpty
     String lastName;
+
+    @NotEmpty
+    @Email
     String email;
 }
 
