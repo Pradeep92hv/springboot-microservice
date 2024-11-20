@@ -34,4 +34,12 @@ The /health endpoint shows the health of the
 application, including the disk space, databases and
 more
 http://localhost:8080/actuator/health
+
+3) The /beans Endpoint
+The /beans endpoint shows all the beans registered in
+your application, including the beans you explicitly
+congured and those auto congured by Spring Boot
+http://localhost:8080/actuator/beans
+
+
  */
