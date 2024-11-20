@@ -82,4 +82,24 @@ details and JVM stack trace
 http://localhost:8080/actuator/threaddump
 
 
+10)  The /loggers Endpoint
+The /loggers endpoint allows you to view and congure the log
+levels of your application at runtime
+http://localhost:8080/actuator/logger
+You can view the logging level of the specic logger
+http://localhost:8080/actuator/loggers/{name
+Ex:
+http://localhost:8080/actuator/loggers/net.javaguides.springboot
+
+11)
+The /shutdown Endpoint
+The /shutdown endpoint can be used to gracefully shut down the
+application
+This endpoint not enabled by default. You can enable this
+endpoint by adding this property in application.properties le
+Management.endpoint.shutdown.enabled=true
+After adding this property, we need to send the HTTP POST
+request to below endpoint
+http://localhost:8080/actuator/shutdown
+
  */
