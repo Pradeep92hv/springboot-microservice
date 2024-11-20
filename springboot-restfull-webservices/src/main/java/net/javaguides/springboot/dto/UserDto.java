@@ -16,7 +16,7 @@ public class UserDto {
     // sensitivate information should not included
     Long id;
 
-    @NotEmpty()    // java bean validation
+    @NotEmpty   // java bean validation
     String firstName;
 
     @NotEmpty
