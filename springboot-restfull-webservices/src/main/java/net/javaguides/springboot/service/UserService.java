@@ -12,4 +12,6 @@ public interface UserService {
     List<User> getAllUser();
 
     User updateUser(User user);
+
+    void deteleUser(Long id);
 }
