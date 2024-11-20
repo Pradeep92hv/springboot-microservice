@@ -31,8 +31,8 @@ public class UserController {
     //build get user by ID REST APi
      // http://localhost:8080/api/users/1
     @GetMapping("{id}")
-    public ResponseEntity<User> getUserBYId(@PathVariable("id") Long userId){
-        User user=userService.getUserById(userId);
+    public ResponseEntity<UserDto> getUserBYId(@PathVariable("id") Long userId){
+        UserDto user=userService.getUserById(userId);
         return new ResponseEntity<>(user,HttpStatus.OK);
     }
 
