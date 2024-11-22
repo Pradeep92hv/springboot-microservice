@@ -29,14 +29,14 @@ public class DepartmentServiceImpl implements DepartmentService {
         return savedDepartmentDto;
     }
 
-//    @Override
-//    public DepartmentDto getDepartmentByCode(String departmentCode) {
-//
-//        Department department = departmentRepository.findByDepartmentCode(departmentCode);
-//
-//        DepartmentDto departmentDto = DepartmentMapper.mapToDepartmentDto(department);
-//
-//        return departmentDto;
-//    }
+    @Override
+    public DepartmentDto getDepartmentByCode(String departmentCode) {
+
+        Department department = departmentRepository.findByDepartmentCode(departmentCode);
+
+        DepartmentDto departmentDto = DepartmentMapper.mapToDepartmentDto(department);
+
+        return departmentDto;
+    }
 }
 

@@ -22,11 +22,11 @@ public class DepartmentController {
         return new ResponseEntity<>(savedDepartment, HttpStatus.CREATED);
     }
 
-//    // Build get department rest api
-//    @GetMapping("{department-code}")
-//    public ResponseEntity<DepartmentDto> getDepartment(@PathVariable("department-code") String departmentCode){
-//        DepartmentDto departmentDto = departmentService.getDepartmentByCode(departmentCode);
-//        return new ResponseEntity<>(departmentDto, HttpStatus.OK);
-//    }
+    // Build get department rest api
+    @GetMapping("{department-code}")
+    public ResponseEntity<DepartmentDto> getDepartment(@PathVariable("department-code") String departmentCode){
+        DepartmentDto departmentDto = departmentService.getDepartmentByCode(departmentCode);
+        return new ResponseEntity<>(departmentDto, HttpStatus.OK);
+    }
 }
 
