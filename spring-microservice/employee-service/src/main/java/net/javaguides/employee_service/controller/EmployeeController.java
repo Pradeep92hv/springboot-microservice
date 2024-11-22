@@ -21,10 +21,10 @@ public class EmployeeController {
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
     }
 
-//    // Build Get Employee REST API
-//    @GetMapping("{id}")
-//    public ResponseEntity<APIResponseDto> getEmployee(@PathVariable("id") Long employeeId){
-//        APIResponseDto apiResponseDto = employeeService.getEmployeeById(employeeId);
-//        return new ResponseEntity<>(apiResponseDto, HttpStatus.OK);
-//    }
+    // Build Get Employee REST API
+    @GetMapping("{id}")
+    public ResponseEntity<EmployeeDto> getEmployee(@PathVariable("id") Long employeeId){
+        EmployeeDto apiResponseDto = employeeService.getEmployeeById(employeeId);
+        return new ResponseEntity<>(apiResponseDto, HttpStatus.OK);
+    }
 }

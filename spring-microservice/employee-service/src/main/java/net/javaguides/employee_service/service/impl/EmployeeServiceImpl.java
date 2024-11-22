@@ -23,4 +23,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return savedEmployeeDto;
     }
+
+    @Override
+    public EmployeeDto getEmployeeById(Long employeeId) {
+
+        Employee employee=employeeRepository.findById(employeeId).get();
+
+        EmployeeDto employeeDto=EmployeeMapper.mapToEmployeeDto(employee);
+
+        return  employeeDto;
+    }
 }
