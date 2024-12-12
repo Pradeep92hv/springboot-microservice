@@ -27,5 +27,8 @@ public class EmployeeServiceApplication {
 		System.out.println("Employeee Service");
 	}
 
+	// go to maven , select the service, -> lifecycle -> package, then open terminal go to required dir and run below command
+	//java -jar -Dserver.port=8085 target/employee-service-0.0.1-SNAPSHOT.jar
+	//http://localhost:8085/api/employees/5
 
 }
